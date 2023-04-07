@@ -10,15 +10,15 @@ export default function Cursor() {
 
   const variants = {
     default: {
-      x: mousePosition.x - 6,
-      y: mousePosition.y - 6,
+      x: mousePosition.x - 11,
+      y: mousePosition.y - 11,
     },
     hover: {
       height: 80,
       width: 80,
       backgroundColor: "rgba(255, 255, 255, 1)",
-      x: mousePosition.x - 25,
-      y: mousePosition.y - 25,
+      x: mousePosition.x - 40,
+      y: mousePosition.y - 40,
     }
   };
 
