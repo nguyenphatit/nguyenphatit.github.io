@@ -6,11 +6,11 @@ interface Props {
     description?: string;
     username?: string;
     author?: string;
-    keyword?: string;
+    keywords?: string;
     children?: string | JSX.Element | JSX.Element[];
 }
 
-export default function HeadApp({ title, username, name, description, author, keyword, children}: Props) {
+export default function HeadApp({ title, name, description, username, author, keywords, children }: Props) {
 
     const seo = {
         title: title || 'nguyenphatit',
@@ -18,25 +18,25 @@ export default function HeadApp({ title, username, name, description, author, ke
         description: description || '',
         username: username || 'nguyenphatit',
         author: author || 'Phat Nguyen',
-        keyword: keyword || 'nguyenphatit',
+        keywords: keywords || 'nguyenphatit',
     }
 
     return (
         <Head>
             <title>{seo.title}</title>
-            <meta name="description" content={seo.username} />
-            <meta name="description" content={seo.name} />
-            <meta name="description" content={seo.author} />
-            <meta name="description" content={seo.description} />
-            <meta name="twitter:card" content={username} />
-            <meta name="twitter:title" content={username} />
-            <meta name="twitter:url" content={`https://twitter.com/${username}`} />
-            <meta name="twitter:description" content={username} />
-            <meta name="twitter:creator" content={username} />
-            <meta name="keywords" content={keyword} />
-            <meta name="author" content={name} />
-            <meta name="author" content={username} />
-            <meta name="author" content={`@${username}`} />
+            <meta name="description" content={seo?.username} />
+            <meta name="description" content={seo?.name} />
+            <meta name="description" content={seo?.author} />
+            <meta name="description" content={seo?.description} />
+            <meta name="twitter:card" content={seo?.username} />
+            <meta name="twitter:title" content={seo?.username} />
+            <meta name="twitter:url" content={`https://twitter.com/${seo?.username}`} />
+            <meta name="twitter:description" content={seo?.username} />
+            <meta name="twitter:creator" content={seo?.username} />
+            <meta name="keywords" content={seo?.keywords} />
+            <meta name="author" content={seo?.name} />
+            <meta name="author" content={seo?.username} />
+            <meta name="author" content={`@${seo?.username}`} />
             {children}
         </Head>
     )
