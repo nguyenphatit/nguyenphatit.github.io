@@ -59,6 +59,7 @@ export default function Cursor() {
       variants={variants}
       animate={cursorVariants}
       className="cursor"
-    ></motion.div>
+      data-testid="cursor"
+    />
   );
 }

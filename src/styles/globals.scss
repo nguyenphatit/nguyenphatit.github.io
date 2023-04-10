@@ -1,8 +1,8 @@
+@import './base';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import './base';
 
 * {
   cursor: none;
@@ -23,11 +23,6 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: $white;
+  background: $black;
 }

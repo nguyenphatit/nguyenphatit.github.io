@@ -1,4 +1,5 @@
-import Cursor from "../feature/cursor";
+import Cursor from "./cursor";
+import Gtag from "./gtag";
 
 interface Props {
     children: string | JSX.Element | JSX.Element[];
@@ -9,6 +10,7 @@ export default function Layout({ children }: Props) {
     <>
       <Cursor />
       <main>{children}</main>
+      <Gtag />
     </>
   );
 }
