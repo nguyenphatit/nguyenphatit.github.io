@@ -15,7 +15,7 @@ export default function HeadApp({ title, name, description, username, author, ke
     const seo = {
         title: title || 'nguyenphatit',
         name: username || 'Phat Nguyen',
-        description: description || '',
+        description: description || 'nguyenphatit',
         username: username || 'nguyenphatit',
         author: author || 'Phat Nguyen',
         keywords: keywords || 'nguyenphatit',
@@ -24,9 +24,6 @@ export default function HeadApp({ title, name, description, username, author, ke
     return (
         <Head>
             <title>{seo.title}</title>
-            <meta name="description" content={seo?.username} />
-            <meta name="description" content={seo?.name} />
-            <meta name="description" content={seo?.author} />
             <meta name="description" content={seo?.description} />
             <meta name="twitter:card" content={seo?.username} />
             <meta name="twitter:title" content={seo?.username} />
@@ -34,9 +31,8 @@ export default function HeadApp({ title, name, description, username, author, ke
             <meta name="twitter:description" content={seo?.username} />
             <meta name="twitter:creator" content={seo?.username} />
             <meta name="keywords" content={seo?.keywords} />
-            <meta name="author" content={seo?.name} />
-            <meta name="author" content={seo?.username} />
-            <meta name="author" content={`@${seo?.username}`} />
+            <meta name="author" content={`${seo?.author}`} />
+            <meta name="username" content={`@${seo?.username}`} />
             {children}
         </Head>
     )
