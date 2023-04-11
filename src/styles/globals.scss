@@ -1,12 +1,9 @@
 @import './base';
+@import './feature';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-* {
-  cursor: none;
-}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -22,7 +19,3 @@
   }
 }
 
-body {
-  color: $white;
-  background: $black;
-}
