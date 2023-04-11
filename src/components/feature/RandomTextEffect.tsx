@@ -8,7 +8,7 @@ interface Props {
 // 🔡 Characters to cycle trough
 let allowedCharacters = ['X', '$', 'Y', '#', '?', '*', '0', '1', '+'];
 
-export default function ChangeTextEffect({ text, className }: Props) {
+export default function RandomTextEffect({ text, className }: Props) {
     useEffect(() => {
         const textHoverEffect = document.querySelectorAll('.text-hover-effect');
 
