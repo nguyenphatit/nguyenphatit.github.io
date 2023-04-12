@@ -6,7 +6,8 @@ interface Props {
 }
 
 export default function IncreaseTextEffect({ text, className }: Props) {
-    
+    let directorEffect = `hover:tracking-wider hover:scale-125 origin-center`;
+
     useEffect(() => {
         const letters = document.querySelectorAll('.effect__letter');
 
@@ -39,12 +40,15 @@ export default function IncreaseTextEffect({ text, className }: Props) {
 
     const renderText = () => {
         let txt: Array<string> = text.toUpperCase().split('');
-        return txt.map((t: string, index: number) => (<span className="effect__letter relative inline-block transition-all hover:scale-125 hover:tracking-wider" key={index}>{t}</span>))
+        return txt.map((c: string, index: number) => {
+            if (c === ' ') return <span className={`effect__letter relative inline-block transition-all ${directorEffect}`} key={index}>&nbsp;</span>
+            return <span className={`effect__letter relative inline-block transition-all ${directorEffect}`} key={index}>{c}</span>
+        })
     }
 
     return (
         <div className={`inline-block uppercase ${className || ''}`}>
-            {renderText()}
+            {renderText()} &nbsp;
         </div>
     )
 }
