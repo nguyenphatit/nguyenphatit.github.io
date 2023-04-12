@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { OrbitControls, Sky, Stars } from "@react-three/drei"
+import { useEffect, useState } from "react";
 import Box from "./Box";
 
 export default function Scene() {
@@ -24,6 +25,9 @@ export default function Scene() {
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
                 <pointLight position={[-10, -10, -10]} />
                 <Box position={boxPosition} color="orange" />
+                <Sky />
+                <Stars />
+                <OrbitControls />
             </Canvas>
         </div>
     )
