@@ -19,7 +19,7 @@ export default function Cursor() {
       backgroundColor: "rgba(255, 255, 255, 1)",
       x: mousePosition.x - 40,
       y: mousePosition.y - 40,
-    }
+    },
   };
 
   useEffect(() => {
