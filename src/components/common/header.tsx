@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { useTheme } from "@/context/theme.context";
 import ToggleTheme from "./toggleTheme";
 import Social from "./social";
 import Logo from "./logo";
-import { useTheme } from "@/context/theme.context";
 
 export default function Header() {
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
@@ -17,7 +18,7 @@ export default function Header() {
     >
       <Logo />
       <div>
-        <button
+        <motion.button
           type="button"
           aria-label="toggle menu"
           onClick={() => setActiveMenu(!activeMenu)}
@@ -30,7 +31,7 @@ export default function Header() {
               after:inline-block after:absolute after:content-[''] after:h-[2px] after:rounded-sm after:bg-light-primary dark:after:bg-dark after:transition-all after:top-[11px] after:left-[6px] after:w-[22px] group-hover:after:w-[34px] group-hover:after:left-0
           "
           ></span>
-        </button>
+        </motion.button>
         <nav
           className={`
           overflow-hidden
@@ -48,21 +49,30 @@ export default function Header() {
             }`}
           >
             <ul className="pl-4 pb-4 md:pl-40 md:pb-40">
-              <li className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-12 transition-all duration-300 relative mb-8 after:content-['01'] after:text-9xl after:absolute after:bottom-[-10px] after:left-0 after:text-light-primary dark:after:text-dark-primary after:-z-[1] after:invisible hover:after:visible after:opacity-0 hover:after:opacity-60 after:transition-all after:duration-150">
-                <a className="relative" href="">
+              <motion.li
+                whileTap={{ scale: 0.7 }}
+                className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-20 transition-all duration-300 relative mb-8 after:content-['01'] after:text-9xl after:absolute after:bottom-[-10px] after:left-0 after:text-light-primary dark:after:text-dark-primary after:-z-[1] after:invisible hover:after:visible after:opacity-0 hover:after:opacity-60 after:transition-all after:duration-150"
+              >
+                <a className="relative" href="/">
                   Home
                 </a>
-              </li>
-              <li className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-12 transition-all duration-300 relative mb-8 after:content-['02'] after:text-9xl after:absolute after:bottom-[-10px] after:left-0 after:text-light-primary dark:after:text-dark-primary after:-z-[1] after:invisible hover:after:visible after:opacity-0 hover:after:opacity-60 after:transition-all after:duration-150">
-                <a className="" href="">
+              </motion.li>
+              <motion.li
+                whileTap={{ scale: 0.7 }}
+                className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-20 transition-all duration-300 relative mb-8 after:content-['02'] after:text-9xl after:absolute after:bottom-[-10px] after:left-0 after:text-light-primary dark:after:text-dark-primary after:-z-[1] after:invisible hover:after:visible after:opacity-0 hover:after:opacity-60 after:transition-all after:duration-150"
+              >
+                <a className="" href="/blog">
                   Blog
                 </a>
-              </li>
-              <li className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-12 transition-all duration-300 relative mb-8 after:content-['03'] after:text-9xl after:absolute after:bottom-[-10px] after:left-0 after:text-light-primary dark:after:text-dark-primary after:-z-[1] after:invisible hover:after:visible after:opacity-0 hover:after:opacity-60 after:transition-all after:duration-150">
+              </motion.li>
+              <motion.li
+                whileTap={{ scale: 0.7 }}
+                className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-20 transition-all duration-300 relative mb-8 after:content-['03'] after:text-9xl after:absolute after:bottom-[-10px] after:left-0 after:text-light-primary dark:after:text-dark-primary after:-z-[1] after:invisible hover:after:visible after:opacity-0 hover:after:opacity-60 after:transition-all after:duration-150"
+              >
                 <a className="" href="">
                   Labs
                 </a>
-              </li>
+              </motion.li>
               <li className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black flex flex-row justify-start items-center">
                 <ToggleTheme />
                 <Social mode={mode} size="medium" />

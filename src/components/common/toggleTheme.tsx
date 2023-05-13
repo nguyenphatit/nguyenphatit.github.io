@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useTheme } from "@/context/theme.context";
 import { useEffect } from "react";
 
@@ -17,19 +18,23 @@ export default function ToggleTheme() {
   return (
     <>
       {mode && mode === "light" ? (
-        <span
+        <motion.span
+          whileHover={{ scale: 1.3 }}
+          whileTap={{ scale: 0.7 }}
           onClick={() => changeMode("dark")}
           className="material-icons text-4xl cursor-pointer"
         >
           dark_mode
-        </span>
+        </motion.span>
       ) : (
-        <span
+        <motion.span
+          whileHover={{ scale: 1.3 }}
+          whileTap={{ scale: 0.7 }}
           onClick={() => changeMode("light")}
           className="material-icons text-4xl cursor-pointer"
         >
           light_mode
-        </span>
+        </motion.span>
       )}
     </>
   );
