@@ -1,5 +1,4 @@
 import About from "@/components/features/About";
-import Contact from "@/components/features/Contact";
 import Experience from "@/components/features/Experience";
 import HardSkill from "@/components/features/HardSkill";
 import Hero from "@/components/features/Hero";
@@ -13,7 +12,6 @@ export default function Home() {
       <Experience />
       <Work />
       <HardSkill />
-      <Contact />
     </main>
   );
 }
