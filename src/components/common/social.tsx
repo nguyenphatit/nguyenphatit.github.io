@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Social({
   mode,
   size,
@@ -9,7 +13,9 @@ export default function Social({
   const width = size === "large" ? 50 : size === "medium" ? 32 : 16;
   return (
     <div className="flex flex-row justify-start items-center">
-      <a
+      <motion.a
+        whileHover={{ scale: 1.3 }}
+        whileTap={{ scale: 0.7 }}
         className="ml-7"
         href="https://www.facebook.com/nguyenphatit"
         target="_blank"
@@ -27,8 +33,10 @@ export default function Social({
             fill={fill}
           ></path>
         </svg>
-      </a>
-      <a
+      </motion.a>
+      <motion.a
+        whileHover={{ scale: 1.3 }}
+        whileTap={{ scale: 0.7 }}
         className="ml-6"
         href="https://twitter.com/nguyenphatit"
         target="_blank"
@@ -46,8 +54,10 @@ export default function Social({
             fill={fill}
           ></path>
         </svg>
-      </a>
-      <a
+      </motion.a>
+      <motion.a
+        whileHover={{ scale: 1.3 }}
+        whileTap={{ scale: 0.7 }}
         className="ml-6"
         href="https://github.com/nguyenphatit"
         target="_blank"
@@ -64,8 +74,10 @@ export default function Social({
             fill={fill}
           ></path>
         </svg>
-      </a>
-      <a
+      </motion.a>
+      <motion.a
+        whileHover={{ scale: 1.3 }}
+        whileTap={{ scale: 0.7 }}
         className="ml-6"
         href="https://www.behance.net/nguyenphatit"
         target="_blank"
@@ -82,8 +94,10 @@ export default function Social({
             fill={fill}
           ></path>
         </svg>
-      </a>
-      <a
+      </motion.a>
+      <motion.a
+        whileHover={{ scale: 1.3 }}
+        whileTap={{ scale: 0.7 }}
         className="ml-6"
         href="https://www.behance.net/nguyenphatit"
         target="_blank"
@@ -100,7 +114,7 @@ export default function Social({
             fill={fill}
           ></path>
         </svg>
-      </a>
+      </motion.a>
     </div>
   );
 }
