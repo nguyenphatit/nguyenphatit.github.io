@@ -1,10 +1,12 @@
-@import './base';
-@import './feature';
+@import "./base";
+@import "./common";
+@import "./feature";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+// theme specific
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -19,3 +21,7 @@
   }
 }
 
+// default
+:root {
+  font-size: 16px;
+}
