@@ -1,0 +1,26 @@
+.nav:before {
+    clip-path: circle(30px at calc(100% - 50px) 50px);
+}
+
+.header.activated {
+    .nav:before {
+        clip-path: circle(100%);
+    }
+
+    .nav-tgl > span {
+        height: 0;
+
+        &:after,
+        &:before {
+            top: 0px;
+            left: 0;
+            width: 34px;
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+        &:before {
+            transform: rotate(45deg);
+        }
+    }
+}
