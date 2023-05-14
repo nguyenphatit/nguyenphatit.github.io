@@ -8,7 +8,8 @@ export default function Experience() {
     <section className="min-h-screen flex flex-col justify-center items-center relative">
       <div className="container">
         <h1 className="font-heading text-9xl text-light-primary dark:text-dark-primary mb-12 px-4 md:px-0">
-          <AnimationTextCharacter text="Education & Experience" />
+          <AnimationTextCharacter text="Education" />
+          <AnimationTextCharacter text="& Experience" />
         </h1>
         <AnimationFade>
           <div className="flex flex-col md:flex-row justify-between items-center px-4 md:px-0 mb-8">

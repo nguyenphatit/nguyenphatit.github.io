@@ -51,7 +51,8 @@ export default function Header() {
             <ul className="pl-4 pb-4 md:pl-40 md:pb-40">
               <motion.li
                 whileTap={{ scale: 0.7 }}
-                className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-20 transition-all duration-300 relative mb-8 after:content-['01'] after:text-9xl after:absolute after:bottom-[-10px] after:left-0 after:text-light-primary dark:after:text-dark-primary after:-z-[1] after:invisible hover:after:visible after:opacity-0 hover:after:opacity-60 after:transition-all after:duration-150"
+                className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-20 transition-all duration-300 relative mb-8
+                before:content-['01'] before:text-9xl before:absolute before:bottom-[-10px] before:left-0 before:text-light-primary dark:before:text-dark-primary before:-z-[1] before:invisible hover:before:visible before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-150"
               >
                 <a className="relative" href="/">
                   Home
@@ -59,7 +60,8 @@ export default function Header() {
               </motion.li>
               <motion.li
                 whileTap={{ scale: 0.7 }}
-                className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-20 transition-all duration-300 relative mb-8 after:content-['02'] after:text-9xl after:absolute after:bottom-[-10px] after:left-0 after:text-light-primary dark:after:text-dark-primary after:-z-[1] after:invisible hover:after:visible after:opacity-0 hover:after:opacity-60 after:transition-all after:duration-150"
+                className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-20 transition-all duration-300 relative mb-8 
+                before:content-['02'] before:text-9xl before:absolute before:bottom-[-10px] before:left-0 before:text-light-primary dark:before:text-dark-primary before:-z-[1] before:invisible hover:before:visible before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-150"
               >
                 <a className="" href="/blog">
                   Blog
@@ -67,9 +69,10 @@ export default function Header() {
               </motion.li>
               <motion.li
                 whileTap={{ scale: 0.7 }}
-                className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-20 transition-all duration-300 relative mb-8 after:content-['03'] after:text-9xl after:absolute after:bottom-[-10px] after:left-0 after:text-light-primary dark:after:text-dark-primary after:-z-[1] after:invisible hover:after:visible after:opacity-0 hover:after:opacity-60 after:transition-all after:duration-150"
+                className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-20 transition-all duration-300 relative mb-8 
+                before:content-['03'] before:text-9xl before:absolute before:bottom-[-10px] before:left-0 before:text-light-primary dark:before:text-dark-primary before:-z-[1] before:invisible hover:before:visible before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-150"
               >
-                <a className="" href="">
+                <a className="" href="/labs">
                   Labs
                 </a>
               </motion.li>

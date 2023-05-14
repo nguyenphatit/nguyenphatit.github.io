@@ -21,6 +21,7 @@ module.exports = {
         sans: ['Roboto', ...fontFamily.sans],
         serif: ['Anton', ...fontFamily.serif],
         heading: ['Six Caps', ...fontFamily.serif],
+        icons: ['Material Icons'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
