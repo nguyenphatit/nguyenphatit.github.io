@@ -97,8 +97,12 @@ export default function Work() {
             </div>
             <div className="flex-1">
               <p className="text-xl leading-relaxed">
-                Develop a website that allows customers to order drugs and
-                manage deliveries
+                This is a website that provides a service for patients to order
+                prescription drugs from their doctor, helping them save time and
+                effort in purchasing medication. The website may have the
+                following features: Prescription upload, Information
+                confirmation, Payment method selection, Delivery, and Customer
+                support
               </p>
             </div>
           </div>
@@ -118,8 +122,11 @@ export default function Work() {
             </div>
             <div className="flex-1">
               <p className="text-xl leading-relaxed">
-                Develop a web application for invoice management website, this
-                website manage the receipt of invoices
+                This is a website used for commission management, helping
+                businesses or individuals easily track and calculate the
+                commission payments to their agents or salespeople. The website
+                may have the following features: Commission information
+                management, Automatic calculation, and Report generation,..etc.
               </p>
             </div>
           </div>

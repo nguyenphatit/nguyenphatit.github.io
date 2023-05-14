@@ -12,7 +12,7 @@ export default function About() {
         </h1>
         <div className="text-2xl md:text-3xl md:leading-[60px] text-light-secondary dark:text-dark-secondary">
           <AnimationTextFade>
-            <p>
+            <p className="px-4 md:px-0">
               Currently work as a software engineer at TMA Solutions in Ho Chi
               Minh City. Due to my interest in web programming and after
               completing a few hobby projects, I have decided to offer my
