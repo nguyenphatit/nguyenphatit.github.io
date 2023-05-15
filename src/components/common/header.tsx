@@ -7,28 +7,6 @@ import ToggleTheme from "./toggleTheme";
 import Social from "./social";
 import Logo from "./logo";
 
-function MenuItem({
-  url,
-  title,
-  num,
-}: {
-  url: string;
-  title: string;
-  num: number | string;
-}) {
-  return (
-    <motion.li
-      whileTap={{ scale: 0.7 }}
-      className={`font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black ltr:hover:pl-20 rtl:hover:pr-20 transition-all duration-300 relative mb-8
-      before:content-['${num}'] before:text-9xl before:absolute before:bottom-[-10px] ltr:before:left-0 rtl:before:right-0 before:text-light-primary dark:before:text-dark-primary before:-z-[1] before:invisible hover:before:visible before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-150`}
-    >
-      <a className="relative" href={url}>
-        {title}
-      </a>
-    </motion.li>
-  );
-}
-
 export default function Header() {
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
   const { mode } = useTheme();
@@ -71,9 +49,33 @@ export default function Header() {
             }`}
           >
             <ul className="ltr:pl-4 rtl:pr-4 pb-4 ltr:md:pl-40 rtl:md:pr-40 md:pb-40">
-              <MenuItem url="/" title="Home" num={'01'} />
-              <MenuItem url="/blog" title="Blog" num={'02'} />
-              <MenuItem url="/labs" title="Labs" num={'03'} />
+              <motion.li
+                whileTap={{ scale: 0.7 }}
+                className={`font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black ltr:hover:pl-20 rtl:hover:pr-20 transition-all duration-300 relative mb-8
+                  before:content-['01'] before:text-9xl before:absolute before:bottom-[-10px] ltr:before:left-0 rtl:before:right-0 before:text-light-primary dark:before:text-dark-primary before:-z-[1] before:invisible hover:before:visible before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-150`}
+              >
+                <a className="relative" href={"/"}>
+                  Home
+                </a>
+              </motion.li>
+              <motion.li
+                whileTap={{ scale: 0.7 }}
+                className={`font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black ltr:hover:pl-20 rtl:hover:pr-20 transition-all duration-300 relative mb-8
+                  before:content-['02'] before:text-9xl before:absolute before:bottom-[-10px] ltr:before:left-0 rtl:before:right-0 before:text-light-primary dark:before:text-dark-primary before:-z-[1] before:invisible hover:before:visible before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-150`}
+              >
+                <a className="relative" href={"/blog"}>
+                  Blog
+                </a>
+              </motion.li>
+              <motion.li
+                whileTap={{ scale: 0.7 }}
+                className={`font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black ltr:hover:pl-20 rtl:hover:pr-20 transition-all duration-300 relative mb-8
+                  before:content-['03'] before:text-9xl before:absolute before:bottom-[-10px] ltr:before:left-0 rtl:before:right-0 before:text-light-primary dark:before:text-dark-primary before:-z-[1] before:invisible hover:before:visible before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-150`}
+              >
+                <a className="relative" href={"/labs"}>
+                  Labs
+                </a>
+              </motion.li>
               <li className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black flex flex-row justify-start items-center">
                 <ToggleTheme />
                 <Social mode={mode} size="medium" />
