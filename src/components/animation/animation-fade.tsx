@@ -10,6 +10,7 @@ export default function AnimationFade({ children, delay }: Props) {
   const variants = {
     hidden: {
       opacity: 0,
+      scale: 0,
       y: 20,
       transition: {
         delay: delay || 0.5,
@@ -19,6 +20,7 @@ export default function AnimationFade({ children, delay }: Props) {
     },
     visible: {
       opacity: 1,
+      scale: 1,
       y: 0,
       transition: {
         delay: delay || 0.5,
@@ -29,7 +31,13 @@ export default function AnimationFade({ children, delay }: Props) {
   };
 
   return (
-    <motion.div variants={variants} initial="hidden" whileInView="visible">
+    <motion.div
+      variants={variants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.3 }}
+    >
       {children}
     </motion.div>
   );

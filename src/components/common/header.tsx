@@ -7,6 +7,28 @@ import ToggleTheme from "./toggleTheme";
 import Social from "./social";
 import Logo from "./logo";
 
+function MenuItem({
+  url,
+  title,
+  num,
+}: {
+  url: string;
+  title: string;
+  num: number | string;
+}) {
+  return (
+    <motion.li
+      whileTap={{ scale: 0.7 }}
+      className={`font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black ltr:hover:pl-20 rtl:hover:pr-20 transition-all duration-300 relative mb-8
+      before:content-['${num}'] before:text-9xl before:absolute before:bottom-[-10px] ltr:before:left-0 rtl:before:right-0 before:text-light-primary dark:before:text-dark-primary before:-z-[1] before:invisible hover:before:visible before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-150`}
+    >
+      <a className="relative" href={url}>
+        {title}
+      </a>
+    </motion.li>
+  );
+}
+
 export default function Header() {
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
   const { mode } = useTheme();
@@ -22,7 +44,7 @@ export default function Header() {
           type="button"
           aria-label="toggle menu"
           onClick={() => setActiveMenu(!activeMenu)}
-          className="inline-block cursor-pointer fixed z-50 right-[16px] top-[16px] w-[70px] h-[70px] border-none rounded-full p-0 bg-light dark:bg-dark-primary text-center focus:outline-none group nav-tgl"
+          className="inline-block cursor-pointer fixed z-50 ltr:right-[16px] rtl:left-[16px] top-[16px] w-[70px] h-[70px] border-none rounded-full p-0 bg-light dark:bg-dark-primary text-center focus:outline-none group nav-tgl"
         >
           <span
             aria-hidden="true"
@@ -44,38 +66,14 @@ export default function Header() {
           <div
             className={`fixed z-40 h-screen bottom-0 flex justify-end items-end ${
               activeMenu
-                ? "left-0 transition-all duration-200 delay-300"
-                : "-left-full transition-all duration-200"
+                ? "ltr:left-0 rtl:right-0 transition-all duration-200 delay-300"
+                : "ltr:-left-full rtl:-right-full transition-all duration-200"
             }`}
           >
-            <ul className="pl-4 pb-4 md:pl-40 md:pb-40">
-              <motion.li
-                whileTap={{ scale: 0.7 }}
-                className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-20 transition-all duration-300 relative mb-8
-                before:content-['01'] before:text-9xl before:absolute before:bottom-[-10px] before:left-0 before:text-light-primary dark:before:text-dark-primary before:-z-[1] before:invisible hover:before:visible before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-150"
-              >
-                <a className="relative" href="/">
-                  Home
-                </a>
-              </motion.li>
-              <motion.li
-                whileTap={{ scale: 0.7 }}
-                className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-20 transition-all duration-300 relative mb-8 
-                before:content-['02'] before:text-9xl before:absolute before:bottom-[-10px] before:left-0 before:text-light-primary dark:before:text-dark-primary before:-z-[1] before:invisible hover:before:visible before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-150"
-              >
-                <a className="" href="/blog">
-                  Blog
-                </a>
-              </motion.li>
-              <motion.li
-                whileTap={{ scale: 0.7 }}
-                className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black hover:pl-20 transition-all duration-300 relative mb-8 
-                before:content-['03'] before:text-9xl before:absolute before:bottom-[-10px] before:left-0 before:text-light-primary dark:before:text-dark-primary before:-z-[1] before:invisible hover:before:visible before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-150"
-              >
-                <a className="" href="/labs">
-                  Labs
-                </a>
-              </motion.li>
+            <ul className="ltr:pl-4 rtl:pr-4 pb-4 ltr:md:pl-40 rtl:md:pr-40 md:pb-40">
+              <MenuItem url="/" title="Home" num={'01'} />
+              <MenuItem url="/blog" title="Blog" num={'02'} />
+              <MenuItem url="/labs" title="Labs" num={'03'} />
               <li className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black flex flex-row justify-start items-center">
                 <ToggleTheme />
                 <Social mode={mode} size="medium" />

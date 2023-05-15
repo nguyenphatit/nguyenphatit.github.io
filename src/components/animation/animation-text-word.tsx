@@ -42,6 +42,8 @@ export default function AnimationTextWord({ text }: Props) {
       variants={container}
       initial="hidden"
       animate="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.3 }}
     >
       {words.map((word, index) => (
         <motion.span

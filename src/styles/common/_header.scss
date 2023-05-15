@@ -24,3 +24,12 @@
         }
     }
 }
+
+// .nav-tgl:lang(ar) {
+//     right: unset;
+//     left: 15px;
+// }
+
+.nav:lang(ar):before {
+    clip-path: circle(30px at 50px 50px);
+}
