@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { motion } from "framer-motion";
 
@@ -41,7 +41,13 @@ export default function AnimationTextCharacter({ text }: Props) {
   };
 
   return (
-    <motion.div variants={container} initial="hidden" whileInView="visible">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 0.3 }}
+    >
       {letters.map((letter: string, index: number) => (
         <motion.span key={index} variants={child}>
           {letter === " " ? "\u00A0" : letter}
