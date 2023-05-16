@@ -22,7 +22,7 @@ export default function Page() {
                         </motion.span>
                     </div>
                     <h1 className="font-heading text-9xl text-light-primary dark:text-dark-primary px-4 md:px-0 text-center select-none">
-                        Welcome to my Labs
+                        Welcome to my Lab
                     </h1>
                     <h2 className="text-3xl opacity-50 text-light-secondary dark:text-dark-secondary mb-12 px-4 md:px-0 text-center">
                         A place to discover new technologies
