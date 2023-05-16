@@ -7,7 +7,7 @@ import ToggleTheme from "./toggleTheme";
 import Social from "./social";
 import Logo from "./logo";
 
-export default function Header() {
+export default function AppHeader() {
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
   const { mode } = useTheme();
   return (
@@ -72,8 +72,8 @@ export default function Header() {
                 className={`font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black ltr:hover:pl-20 rtl:hover:pr-20 transition-all duration-300 relative mb-8
                   before:content-['03'] before:text-9xl before:absolute before:bottom-[-10px] ltr:before:left-0 rtl:before:right-0 before:text-light-primary dark:before:text-dark-primary before:-z-[1] before:invisible hover:before:visible before:opacity-0 hover:before:opacity-60 before:transition-all before:duration-150`}
               >
-                <a className="relative" href={"/labs"}>
-                  Labs
+                <a className="relative" href={"/my-lab"}>
+                  Lab
                 </a>
               </motion.li>
               <li className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black flex flex-row justify-start items-center">

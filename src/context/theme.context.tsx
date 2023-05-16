@@ -11,19 +11,19 @@ const defaultContext = {
 const ThemeContext = createContext(defaultContext);
 
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
-    const [mode, setMode] = useState<string>(() => {
-        if (typeof window !== 'undefined') {
-            const localTheme = localStorage.getItem('theme');
+    const [mode, setMode] = useState<string>('light');
 
-            if (localTheme) return localTheme;
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const localTheme = localStorage.getItem('theme') || null;
+
+            if (localTheme) setMode(localTheme);
 
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                return "dark";
+                setMode("dark");
             }
         }
-        
-        return 'light';
-    });
+    }, []);
 
     const changeMode = (mode: string) => {
         setMode(mode);

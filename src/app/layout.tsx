@@ -1,6 +1,6 @@
 import Footer from "@/components/common/footer";
 import Gtag from "@/components/common/gtag";
-import Header from "@/components/common/header";
+import AppHeader from "@/components/common/app-header";
 import { ThemeWrapper } from "@/context/theme.context";
 import "@/styles/globals.scss";
 
@@ -16,14 +16,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" dir="ltr">
-      <ThemeWrapper>
-        <body>
-          <Header />
+      <body>
+        <ThemeWrapper>
+          <AppHeader />
           {children}
-          <Footer />  
-        </body>
-        <Gtag />
-      </ThemeWrapper>
+          <Footer />
+          <Gtag />
+        </ThemeWrapper>
+      </body>
     </html>
   );
 }
