@@ -4,7 +4,7 @@ import Image from "next/image";
 const DEV_TO_API = "https://dev.to/api/";
 
 async function getData() {
-  const res = await fetch(`${DEV_TO_API}articles?username=nguyenphatit`);
+  const res = await fetch(`${DEV_TO_API}articles?username=nguyenphatit`, { next: { revalidate: 10 }});
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
@@ -14,7 +14,7 @@ async function getData() {
   return res.json();
 }
 
-export default async function Blog() {
+export default async function Page() {
   const articles = await getData();
   return (
     <main className="bg-light text-light-secondary dark:bg-dark dark:text-dark-secondary min-h-screen">
