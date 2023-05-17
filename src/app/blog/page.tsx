@@ -2,7 +2,7 @@ import AnimationTextCharacter from "@/components/animation/animation-text-charac
 import Image from "next/image";
 
 async function getData() {
-  const res = await fetch(`${process.env.NEXT_DEV_TO_API}articles?username=nguyenphatit`, { next: { revalidate: 10 }});
+  const res = await fetch(`${process.env.NEXT_PUBLIC_DEV_TO_API}articles?username=nguyenphatit`, { next: { revalidate: 10 }});
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
