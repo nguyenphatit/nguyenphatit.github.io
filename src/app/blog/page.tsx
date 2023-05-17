@@ -1,5 +1,5 @@
 import AnimationTextCharacter from "@/components/animation/animation-text-character";
-import { DEV_TO_API } from "@/config/constants";
+import { DEV_TO_API } from "@/common/constants";
 import Image from "next/image";
 
 async function getData() {
