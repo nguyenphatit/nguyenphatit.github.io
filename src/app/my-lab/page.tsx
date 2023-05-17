@@ -1,7 +1,6 @@
 "use client";
 
 import Clock from "@/components/features/Clock";
-import Sheet from "@/components/features/Sheet";
 import { motion } from "framer-motion";
 
 export default function Page() {
@@ -29,8 +28,8 @@ export default function Page() {
                         A place to discover new technologies
                     </h2>
                     <div className="py-24">
-                        <Sheet />
-                        {/* <Clock /> */}
+                        {/* <Sheet /> */}
+                        <Clock />
                     </div>  
                 </div>
             </section>
