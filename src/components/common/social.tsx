@@ -1,22 +1,42 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from "react";
 
 export default function Social({
-  mode,
   size,
+  defaultMode
 }: {
-  mode: string;
   size: "small" | "medium" | "large";
+  defaultMode: string | undefined;
 }) {
-  const fill = mode === "light" ? "#201B19" : "#FFFFFF";
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null;
+
+  let fill;
+
+  if (defaultMode) {
+    fill = defaultMode === "light" ? "#201B19" : "#FFFFFF";
+  } else {
+    fill = theme === "light" ? "#201B19" : "#FFFFFF";
+  }
+
   const width = size === "large" ? 50 : size === "medium" ? 32 : 16;
+
+  console.log(fill);
+
   return (
-    <div className="flex flex-row justify-start items-center">
+    <div className="flex flex-row gap-6 justify-start items-center">
       <motion.a
         whileHover={{ scale: 1.3 }}
         whileTap={{ scale: 0.7 }}
-        className="ltr:ml-7 rtl:mr-7"
         href="https://www.facebook.com/nguyenphatit"
         target="_blank"
       >
@@ -37,7 +57,6 @@ export default function Social({
       <motion.a
         whileHover={{ scale: 1.3 }}
         whileTap={{ scale: 0.7 }}
-        className="ltr:ml-6 rtl:mr-6"
         href="https://twitter.com/nguyenphatit"
         target="_blank"
       >
@@ -58,7 +77,6 @@ export default function Social({
       <motion.a
         whileHover={{ scale: 1.3 }}
         whileTap={{ scale: 0.7 }}
-        className="ltr:ml-6 rtl:mr-6"
         href="https://github.com/nguyenphatit"
         target="_blank"
       >
@@ -78,7 +96,6 @@ export default function Social({
       <motion.a
         whileHover={{ scale: 1.3 }}
         whileTap={{ scale: 0.7 }}
-        className="ltr:ml-6 rtl:mr-6"
         href="https://www.behance.net/nguyenphatit"
         target="_blank"
       >
@@ -98,7 +115,6 @@ export default function Social({
       <motion.a
         whileHover={{ scale: 1.3 }}
         whileTap={{ scale: 0.7 }}
-        className="ltr:ml-6 rtl:mr-6"
         href="https://www.behance.net/nguyenphatit"
         target="_blank"
       >
