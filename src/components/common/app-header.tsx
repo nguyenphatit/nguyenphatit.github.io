@@ -2,14 +2,12 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useTheme } from "@/context/theme.context";
-import ToggleTheme from "./toggleTheme";
+import ToggleTheme from "./toggle-theme";
 import Social from "./social";
 import Logo from "./logo";
 
 export default function AppHeader() {
   const [activeMenu, setActiveMenu] = useState<boolean>(false);
-  const { mode } = useTheme();
   return (
     <header
       className={`header fixed flex justify-between items-center w-full h-[6.75rem] z-50 bg-light-primary dark:bg-dark ${
@@ -76,9 +74,11 @@ export default function AppHeader() {
                   Lab
                 </a>
               </motion.li>
+              <li className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black flex flex-row justify-start items-center mb-8">
+                <Social size="medium" />
+              </li>
               <li className="font-bold text-5xl md:text-8xl select-none dark:text-dark-secondary text-black flex flex-row justify-start items-center">
                 <ToggleTheme />
-                <Social mode={mode} size="medium" />
               </li>
             </ul>
           </div>

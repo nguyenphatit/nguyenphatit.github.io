@@ -13,13 +13,15 @@ export default function About() {
         <div className="text-2xl md:text-3xl md:leading-[60px] text-light-secondary dark:text-dark-secondary">
           <AnimationTextFade>
             <p className="px-4 md:px-0 select-none">
-              Currently work as a software engineer at TMA Solutions in Ho Chi
-              Minh City. Due to my interest in web programming and after
-              completing a few hobby projects, I have decided to offer my
-              services to paying customers. My goal is to provide users with a
-              fantastic web experience. I am passionate about both design and
-              development and strive to create products that not only look
-              amazing but also function effectively in various ways.
+              I am currently employed as a software engineer at TMA Solutions in
+              Ho Chi Minh City. Combining my keen interest in web programming
+              and successful completion of several personal projects, I have
+              made the decision to extend my services to clients in exchange for
+              compensation. My primary objective is to deliver an exceptional
+              web experience to users. With a deep passion for both design and
+              development, I am committed to crafting products that not only
+              possess stunning aesthetics but also operate efficiently across
+              diverse functionalities.
             </p>
           </AnimationTextFade>
         </div>
