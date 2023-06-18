@@ -9,7 +9,7 @@ export default function Social({
   defaultMode
 }: {
   size: "small" | "medium" | "large";
-  defaultMode: string | undefined;
+  defaultMode?: string | undefined;
 }) {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
